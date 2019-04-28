@@ -99,8 +99,10 @@ int main(int argc , char **argv)
 			while((n = read(connfd , buff , MAX_LINE)) > 0)
 			{
 				printf("Recive msg by client :%s",buff);
-				char writebuff[MAX_LINE]="";
-				char readbuff[MAX_LINE]="";
+				char writebuff[MAX_LINE];
+				char readbuff[MAX_LINE];
+                                memset(writebuff,0,MAX_LINE);
+                                memset(readbuff,0,MAX_LINE);
 				strncpy(readbuff,buff,strlen(buff)-1);
 				sprintf(writebuff , "msg:%s send success\r\n" , readbuff);
 				write(connfd , writebuff , strlen(writebuff));
