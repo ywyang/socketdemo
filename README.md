@@ -5,4 +5,4 @@
 # 使用方法
 已将代码编译为二进制文件socketserver，亲测centos、ubuntu latest镜像直接可用。
 
-在dockerfile 中指定socketserver 作为endpoint即可。
+在dockerfile 中指定socketserver 作为ENTRYPOINT即可。
